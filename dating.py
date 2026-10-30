@@ -7,9 +7,10 @@ import constants
 
 
 def main():
-
+    # Setting needed variables
     valid_ipt = False
 
+    # Asking the user questions that will validate their worthiness
     is_rich_ipt = input(
         "Is your income well above average? ({0}/{1}): ".format(
             constants.VALID, constants.INVALID
@@ -20,9 +21,9 @@ def main():
             constants.SMALLEST_LOOKS_RANGE, constants.LARGEST_LOOKS_RANGE
         )
     )
-
+    # the try statement will make sure the code safely with invalid user inputs
     try:
-
+        # checking if the IsRich input is valid
         if is_rich_ipt != constants.VALID and is_rich_ipt != constants.INVALID:
 
             print(constants.ERR_PRINT_MSG)
@@ -30,7 +31,9 @@ def main():
         else:
             valid_ipt = True
 
+        # This section determines whether or not the user is valid to date the grandchild
         if valid_ipt:
+            # Converting the year input to an integer
             has_looks = int(has_looks_ipt)
 
             if (
